@@ -7,6 +7,7 @@
 
 import React, { useEffect, useState } from 'react';
 import {
+  Image,
   NativeSyntheticEvent,
   SafeAreaView,
   TextInputChangeEventData,
@@ -27,12 +28,13 @@ import { NativeBaseProvider } from "native-base";
 import ButtonUI from './components/button/index';
 import { theme } from './styles/theme/nativeBaseTheme'
 import { InputUI } from './components/input';
+import SelectUI from './components/select';
 
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
   const [valueBtn, setValueBtn] = useState('')
-
+  console.log(valueBtn)
   return (
     <NativeBaseProvider theme={theme}>
       <LinearGradient
@@ -41,7 +43,9 @@ function App(): React.JSX.Element {
       >
         <SafeAreaView>
           <View>
-            <InputUI haveIcon={true} placeholder={'E-mail'} value={valueBtn} onChange={(e) => setValueBtn(e.nativeEvent.text)} />
+            <SelectUI items={[
+              {label: 'LojasMM', value: 'aaaa'}
+            ]} placeholder={'Escolha o cliente'} value={valueBtn} onChange={(v)=> setValueBtn(v) } />
           </View>
         </SafeAreaView>
       </LinearGradient>
