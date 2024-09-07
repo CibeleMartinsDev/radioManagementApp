@@ -13,7 +13,7 @@ type ButtonProps = PropsWithChildren<{
 export default function ButtonUI({title, onPress, size, variant}: ButtonProps): React.JSX.Element {
 
     return (
-         <Button backgroundColor={'primary.50'} size={size} variant={variant} onPress={onPress}>{title}</Button>
+         <Button backgroundColor={'primary.generic'} size={size} variant={variant} onPress={onPress}>{title}</Button>
     )
 
 }
