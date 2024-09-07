@@ -4,16 +4,16 @@ export const theme = extendTheme({
     colors: {
         // Add new color
         primary: {
-            50: '#FFFFFF',
-            100: '#C5E4F3',
-            200: '#A2D4EC',
-            300: '#7AC1E4',
-            400: '#47A9DA',
-            500: '#0088CC',
-            600: '#007AB8',
-            700: '#006BA1',
-            800: '#005885',
-            900: '#003F5E',
+            generic: '#FFFFFF',
+            genericBlack: '#000000',
+            transparent: '#00000000',
+            300: '',
+            400: '',
+            500: '',
+            600: '',
+            700: '',
+            800: '',
+            900: '',
         },
         // Redefining only one shade, rest of the color will remain same.
         amber: {

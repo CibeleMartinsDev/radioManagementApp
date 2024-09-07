@@ -5,9 +5,11 @@
  * @format
  */
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
+  NativeSyntheticEvent,
   SafeAreaView,
+  TextInputChangeEventData,
   useColorScheme,
   View,
 } from 'react-native';
@@ -16,27 +18,33 @@ import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
 
+
+//libs
+import { LinearGradient } from 'react-native-linear-gradient';
 import { NativeBaseProvider } from "native-base";
+
+//components/themes
 import ButtonUI from './components/button/index';
-import {theme} from './styles/theme/nativeBaseTheme'
+import { theme } from './styles/theme/nativeBaseTheme'
+import { InputUI } from './components/input';
+
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
   const [valueBtn, setValueBtn] = useState('')
 
-  
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-console.log(valueBtn)
   return (
     <NativeBaseProvider theme={theme}>
-      <SafeAreaView style={backgroundStyle}>
+      <LinearGradient
+        colors={['#1A00BA', '#585865']}
+        style={{ flex: 1 }}
+      >
+        <SafeAreaView>
           <View>
-            <ButtonUI title={'Entrar'} onPress={()=> setValueBtn('laalalall')} size={'sm'} variant={'ghost'} />
+            <InputUI haveIcon={true} placeholder={'E-mail'} value={valueBtn} onChange={(e) => setValueBtn(e.nativeEvent.text)} />
           </View>
-      </SafeAreaView>
+        </SafeAreaView>
+      </LinearGradient>
     </NativeBaseProvider>
   );
 }
