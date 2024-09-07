@@ -22,13 +22,14 @@ import {
 
 //libs
 import { LinearGradient } from 'react-native-linear-gradient';
-import { NativeBaseProvider } from "native-base";
+import { AspectRatio, NativeBaseProvider } from "native-base";
 
 //components/themes
 import ButtonUI from './components/button/index';
 import { theme } from './styles/theme/nativeBaseTheme'
 import { InputUI } from './components/input';
 import SelectUI from './components/select';
+import CardUI from './components/card';
 
 
 function App(): React.JSX.Element {
@@ -43,9 +44,7 @@ function App(): React.JSX.Element {
       >
         <SafeAreaView>
           <View>
-            <SelectUI items={[
-              {label: 'LojasMM', value: 'aaaa'}
-            ]} placeholder={'Escolha o cliente'} value={valueBtn} onChange={(v)=> setValueBtn(v) } />
+           <CardUI title='Lojas MM' description1='Propagandas ativas: 1' description2='lojasmm@gmail.com' description3='44 9 97675641'/>
           </View>
         </SafeAreaView>
       </LinearGradient>
