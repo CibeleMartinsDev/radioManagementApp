@@ -7,6 +7,7 @@
 
 import React, { useEffect, useState } from 'react';
 import {
+  GestureResponderEvent,
   Image,
   NativeSyntheticEvent,
   SafeAreaView,
@@ -22,7 +23,7 @@ import {
 
 //libs
 import { LinearGradient } from 'react-native-linear-gradient';
-import { AspectRatio, NativeBaseProvider } from "native-base";
+import { AspectRatio, NativeBaseProvider, useDisclose } from "native-base";
 
 //components/themes
 import ButtonUI from './components/button/index';
@@ -30,12 +31,17 @@ import { theme } from './styles/theme/nativeBaseTheme'
 import { InputUI } from './components/input';
 import SelectUI from './components/select';
 import CardUI from './components/card';
+import BottomSheetUI from './components/bottomSheet';
 
 
 function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  const [valueBtn, setValueBtn] = useState('')
-  console.log(valueBtn)
+ 
+  const {
+    isOpen,
+    onOpen,
+    onClose
+  } = useDisclose();
+
   return (
     <NativeBaseProvider theme={theme}>
       <LinearGradient
@@ -44,7 +50,8 @@ function App(): React.JSX.Element {
       >
         <SafeAreaView>
           <View>
-           <CardUI title='Lojas MM' description1='Propagandas ativas: 1' description2='lojasmm@gmail.com' description3='44 9 97675641'/>
+            <ButtonUI title='Abrir bottom sheet' onPress={onOpen} size={'sm'} variant={'ghost'}/>
+            <BottomSheetUI isOpen={isOpen} onClose={onClose} message={{status: 400, text: 'erro na requisicao'}}/>
           </View>
         </SafeAreaView>
       </LinearGradient>
