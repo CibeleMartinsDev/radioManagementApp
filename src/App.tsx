@@ -51,7 +51,7 @@ function App(): React.JSX.Element {
         <SafeAreaView>
           <View>
             <ButtonUI title='Abrir bottom sheet' onPress={onOpen} size={'sm'} variant={'ghost'}/>
-            <BottomSheetUI isOpen={isOpen} onClose={onClose} message={{status: 400, text: 'erro na requisicao'}}/>
+            <BottomSheetUI isOpen={isOpen} onClose={onClose} message={{status: 400, text: 'Erro na requisicao'}}/>
           </View>
         </SafeAreaView>
       </LinearGradient>

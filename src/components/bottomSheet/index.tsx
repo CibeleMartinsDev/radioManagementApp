@@ -6,11 +6,11 @@ const BottomSheetUI = ({ isOpen, onClose, message }: BottomSheetUIProps) => {
 
     return (
         <Actionsheet isOpen={isOpen} onClose={onClose}>
-            <Actionsheet.Content>
+            <Actionsheet.Content backgroundColor={'primary.generic'}>
                 <HStack flexDirection="row" alignItems="center" p={4} space={14}>
-                    <Text>{message.text}</Text>
+                    <Text bold fontSize={'2xl'} color={'primary.genericBlack'}>{message.text}</Text>
                     {
-                        errorStatus.includes(message.status) ? <WarningIcon size={8} color={'primary.generic'} /> : <CheckCircleIcon size={8} color={'primary.generic'} />
+                        errorStatus.includes(message.status) ? <WarningIcon size={8} color={'primary.genericBlack'} /> : <CheckCircleIcon size={8} color={'primary.genericBlack'} />
                     }
                 </HStack>
             </Actionsheet.Content>
