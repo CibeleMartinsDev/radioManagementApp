@@ -19,7 +19,7 @@ import {
 import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
-
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
 
 //libs
 import { LinearGradient } from 'react-native-linear-gradient';
@@ -29,9 +29,15 @@ import { AspectRatio, Center, HStack, NativeBaseProvider, useDisclose } from "na
 import { theme } from './styles/theme/nativeBaseTheme'
 import NavbarMenuUI from './components/navBarMenu';
 import CardVisualizationUI from './components/cardVisualization';
+import Navigator from './navigator/AppNavigator';
+import { enableScreens } from 'react-native-screens';
+import Login from './pages/login';
+import ButtonUI from './components/button';
 
+enableScreens();
 
 function App(): React.JSX.Element {
+
 
   // const [nameCustomer, setNameCustomer] = useState('')
   // const [adressCustomer, setAdressCustomer] = useState('')
@@ -131,23 +137,11 @@ function App(): React.JSX.Element {
   //   console.log(phone2Customer)
   // }
   return (
+
     <NativeBaseProvider theme={theme}>
-      <LinearGradient
-        colors={['#1A00BA', '#585865']}
-        style={{ flex: 1 }}
-      >
-        <SafeAreaView>
-          <View>
-            <HStack>
-              <NavbarMenuUI />
-                <Center>    <CardVisualizationUI onPress={()=> console.log('card visualization')} title={'Lojas MM'} items={[{
-                label: 'Cliente: ', value:'Lojas MM'
-               }]}/></Center>
-           
-            </HStack>
-          </View>
-        </SafeAreaView>
-      </LinearGradient>
+      <NavigationContainer>
+        <Navigator />
+      </NavigationContainer>
     </NativeBaseProvider>
   );
 }
