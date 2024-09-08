@@ -28,7 +28,7 @@ import { AspectRatio, Center, HStack, NativeBaseProvider, useDisclose } from "na
 //components/themes
 import { theme } from './styles/theme/nativeBaseTheme'
 import NavbarMenuUI from './components/navBarMenu';
-import CardEditionUI from './components/cardVisualization';
+import CardVisualizationUI from './components/cardVisualization';
 
 
 function App(): React.JSX.Element {
@@ -140,7 +140,7 @@ function App(): React.JSX.Element {
           <View>
             <HStack>
               <NavbarMenuUI />
-                <Center>    <CardEditionUI title={'Lojas MM'} items={[{
+                <Center>    <CardVisualizationUI onPress={()=> console.log('card visualization')} title={'Lojas MM'} items={[{
                 label: 'Cliente: ', value:'Lojas MM'
                }]}/></Center>
            

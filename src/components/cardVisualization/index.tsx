@@ -4,16 +4,14 @@ import { CardEditionProps } from "./interface";
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 
-export default function CardVisualizationUI({ items, title }: CardEditionProps) {
+export default function CardVisualizationUI({ items, title, onPress }: CardEditionProps) {
 
     return (
         <VStack p={16} space={4} w="100%" display="flex" justifyContent="center">
             <HStack w="100%" space={16}>
                 <Heading>{title}</Heading>
                 <Pressable
-                    onPress={() => {
-                        console.log('preesss icones')
-                    }}
+                    onPress={onPress}
                     _pressed={{ opacity: 0.7 }}
                 >
                    <Icon as={MaterialIcons} name="edit" size="2xl" color="primary.generic"/>
