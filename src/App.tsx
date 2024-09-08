@@ -26,15 +26,9 @@ import { LinearGradient } from 'react-native-linear-gradient';
 import { AspectRatio, Center, HStack, NativeBaseProvider, useDisclose } from "native-base";
 
 //components/themes
-import ButtonUI from './components/button/index';
 import { theme } from './styles/theme/nativeBaseTheme'
-import { InputUI } from './components/input';
-import SelectUI from './components/select';
-import CardUI from './components/card';
-import BottomSheetUI from './components/bottomSheet';
 import NavbarMenuUI from './components/navBarMenu';
-import DynamicFormUI from './components/dynamicForm';
-import { InputDynamicForm } from './components/dynamicForm/interface';
+import CardEditionUI from './components/cardVisualization';
 
 
 function App(): React.JSX.Element {
@@ -146,22 +140,10 @@ function App(): React.JSX.Element {
           <View>
             <HStack>
               <NavbarMenuUI />
-          
-                {/* <DynamicFormUI inputs={inputsAdvertisement} theme={'advertisement'} selectOptions={{
-                  placeholder: 'Selecione o cliente',
-                  value: selectValue,
-                  onChange: (e) => { setSelectValue(e), console.log('valor select: ', selectValue) },
-                  items: [
-                    { label: 'Selecione um cliente', value: '' },
-                    { label: 'Lojas MM', value: 'Lojas MM' },
-                    { label: 'Padaria Nossa Senhora Aparecida', value: 'Padaria Nossa Senhora Aparecida' }
-                  ]
-                }}>
-                  <ButtonUI title={'Cadastrar propaganda'} onPress={onSubmit} size={'60%'} variant={'ghost'} />
-                </DynamicFormUI> */}
-                {/* <DynamicFormUI inputs={inputs} theme={'customer'}>
-                  <ButtonUI title={'Cadastrar cliente'} onPress={onSubmit} size={'60%'} variant={'ghost'} />
-                </DynamicFormUI> */}
+                <Center>    <CardEditionUI title={'Lojas MM'} items={[{
+                label: 'Cliente: ', value:'Lojas MM'
+               }]}/></Center>
+           
             </HStack>
           </View>
         </SafeAreaView>
