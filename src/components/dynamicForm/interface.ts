@@ -6,6 +6,7 @@ export interface DynamicFormUIProps{
     children?: React.ReactElement,
     theme: 'customer' | 'advertisement',
     selectOptions?: SelectProps;
+    height: string;
 }
 
 export interface InputDynamicForm {
