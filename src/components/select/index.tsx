@@ -4,7 +4,7 @@ import { SelectProps } from "./interface";
 
 export default function SelectUI({ value, placeholder, onChange, items }: SelectProps) {
     return (
-        <Select selectedValue={value} minWidth="60%" width="60%" accessibilityLabel={placeholder} placeholder={placeholder}
+        <Select selectedValue={value} minWidth="100%"  accessibilityLabel={placeholder} placeholder={placeholder}
             _selectedItem={{
                 bg: "teal.600",
                 endIcon: <CheckIcon size="5"
@@ -12,6 +12,8 @@ export default function SelectUI({ value, placeholder, onChange, items }: Select
             }} mt={1} onValueChange={onChange}
             borderWidth={0} 
             borderBottomWidth={2} 
+            position="fixed"
+            top={50}
             borderColor='primary.generic' 
             placeholderTextColor={'primary.generic'}
             dropdownIcon={<ChevronDownIcon size={5} color="white" />}
