@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Actionsheet, CheckCircleIcon, HStack, Text, WarningIcon } from 'native-base';
-import { errorStatus } from './constants';
+import { Actionsheet, CheckCircleIcon, CloseIcon, HStack, Text, WarningIcon } from 'native-base';
+import { errorStatus, successStatus } from './constants';
 
 const BottomSheetUI = ({ isOpen, onClose, message }: BottomSheetUIProps) => {
 
@@ -10,7 +10,13 @@ const BottomSheetUI = ({ isOpen, onClose, message }: BottomSheetUIProps) => {
                 <HStack flexDirection="row" alignItems="center" p={4} space={14}>
                     <Text bold fontSize={'2xl'} color={'primary.genericBlack'}>{message.text}</Text>
                     {
-                        errorStatus.includes(message.status) ? <WarningIcon size={8} color={'primary.genericBlack'} /> : <CheckCircleIcon size={8} color={'primary.genericBlack'} />
+                        errorStatus.includes(message.status) && <CloseIcon size={8} color={'primary.genericBlack'} />
+                    }
+                    {
+                        successStatus.includes(message.status) && <CheckCircleIcon size={8} color={'primary.genericBlack'} />
+                    }
+                    {
+                        !successStatus.includes(message.status) && !errorStatus.includes(message.status) && <WarningIcon size={8} color={'primary.genericBlack'} />
                     }
                 </HStack>
             </Actionsheet.Content>
