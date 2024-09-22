@@ -10,8 +10,20 @@ import Visualization from '../pages/visualization';
 import Dashboard from '../pages/dashboard';
 import BillingInformation from '../pages/billingInformation';
 import withGradient from '../components/wrapperGradient';
+import Customer from '../interfaces/customer';
 
-const Stack = createNativeStackNavigator();
+export type RootStackParamList = {
+    Login: undefined;
+    Home: undefined;
+    'Cadastrar cliente': undefined;
+    'Cadastrar propaganda': undefined;
+    'editar/cliente e propaganda': undefined;
+    'Visualizar': { customer: Customer };
+    Dashboard: undefined;
+    'Informações Cobrança Propaganda': undefined;
+  };
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 // Envolva suas telas com o gradiente
 const GradientLogin = withGradient(Login);
 const GradientHome = withGradient(Home);
@@ -29,7 +41,7 @@ export default function Navigator() {
             <Stack.Screen options={{ headerShown: false }} name="Cadastrar cliente" component={GradientRegisterCustomer} />
             <Stack.Screen options={{ headerShown: false }} name="Cadastrar propaganda" component={GradientRegisterAdvertisement} />
             <Stack.Screen options={{ headerShown: false }} name="editar/cliente e propaganda" component={GradientEdit} />
-            <Stack.Screen options={{ headerShown: false }} name="visualizar/propagandas e clientes" component={GradientVisualization} />
+            <Stack.Screen options={{ headerShown: false }} name="Visualizar" component={GradientVisualization} />
             <Stack.Screen options={{ headerShown: false }} name="Dashboard" component={GradientDashboard} />
             <Stack.Screen options={{ headerShown: false }} name="Informações Cobrança Propaganda" component={GradientBillingInformation} />
         </Stack.Navigator>

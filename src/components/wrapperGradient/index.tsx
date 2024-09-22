@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { LinearGradient } from 'react-native-linear-gradient';
 import { SafeAreaView } from 'react-native';
 import NavbarMenuUI from '../navBarMenu';
-import { Center, HStack } from 'native-base';
+import { Center, HStack, useDisclose } from 'native-base';
 import { useRoute } from '@react-navigation/native';
+import BottomSheetUI from '../bottomSheet';
+import { AuthContext } from '../../context/auth-context';
 
 export default function withGradient(WrappedComponent: any) {
   
@@ -18,10 +20,9 @@ export default function withGradient(WrappedComponent: any) {
                 <SafeAreaView style={{ flex: 1 }}>
                     <HStack>
                         {!isLoginRoute && <NavbarMenuUI />}
-                        <Center flexDir={'row'}>
+                        <Center p={10}  flexDir={'row'}>
                         <WrappedComponent {...props} />
                         </Center>
-                     
                     </HStack>
                 </SafeAreaView>
             </LinearGradient>

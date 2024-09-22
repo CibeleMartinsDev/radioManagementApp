@@ -8,7 +8,7 @@ const BottomSheetUI = ({ isOpen, onClose, message }: BottomSheetUIProps) => {
         <Actionsheet isOpen={isOpen} onClose={onClose}>
             <Actionsheet.Content backgroundColor={'primary.generic'}>
                 <HStack flexDirection="row" alignItems="center" p={4} space={14}>
-                    <Text bold fontSize={'2xl'} color={'primary.genericBlack'}>{message.text}</Text>
+                    <Text bold fontSize={'lg'} color={'primary.genericBlack'}>{message.text}</Text>
                     {
                         errorStatus.includes(message.status) && <CloseIcon size={8} color={'primary.genericBlack'} />
                     }
