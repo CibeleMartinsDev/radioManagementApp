@@ -211,7 +211,7 @@ export default function Edit({ route }: Props) {
             type: 'text',
             name: 'amount',
             placeholder: 'R$ Valor',
-            value: 'R$ ' + amount,
+            value: amount,
             onChange: (e) => { setAmount(e.nativeEvent.text) }
         },
         {
@@ -337,7 +337,7 @@ export default function Edit({ route }: Props) {
             const advertisementDatePayement = object.datePayement.toString()
             const advertisementAdversitingSchedules = object?.advertisingSchedules.join(", ")
             setName(object.name);
-            setSelectValue({ label: object.customerName, value: object.customerName })
+            setSelectValue({ label: object.customerName ? object.customerName : object.customer , value: object.customerName ? object.customerName : object.customer })
             setFrenquencyDivulgation(object.frenquencyDivulgation);
             setAdvertisingSchedules(advertisementAdversitingSchedules);
             setAmount(object.amount);
