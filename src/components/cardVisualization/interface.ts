@@ -7,5 +7,5 @@ export interface CardEditionProps{
     title: string;
     items: Items[],
     onPress: ((event: GestureResponderEvent) => void);
-    object: [];
+    object?: [];
 }

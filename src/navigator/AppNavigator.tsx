@@ -11,6 +11,7 @@ import Dashboard from '../pages/dashboard';
 import BillingInformation from '../pages/billingInformation';
 import withGradient from '../components/wrapperGradient';
 import Customer from '../interfaces/customer';
+import Advertisement from '../interfaces/advertisement';
 
 export type RootStackParamList = {
     Login: undefined;
@@ -18,7 +19,7 @@ export type RootStackParamList = {
     'Cadastrar cliente': undefined;
     'Cadastrar propaganda': undefined;
     'editar/cliente e propaganda': undefined;
-    'Visualizar': { customer: Customer };
+    'Visualizar': { object: any};
     Dashboard: undefined;
     'Informações Cobrança Propaganda': undefined;
   };

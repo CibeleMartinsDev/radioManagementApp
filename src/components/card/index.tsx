@@ -27,7 +27,7 @@ export default function CardUI({ title, description1, description2, description3
                         </VStack>
                         <Pressable
                         position={'fixed'}
-                        bottom={10}
+                        bottom={7}
                         left={6}
                             onPress={onPressIcon}
                             _pressed={{ opacity: 0.7 }}

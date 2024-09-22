@@ -20,15 +20,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [token, setToken] = useState<string | null>(null);
   const [error, setError] = useState<boolean | null>(null);
   const isAuthenticated = !!token;
-  console.log('Token no context: ', token)
 
   // Configurando um interceptor global de requisições
   axios.interceptors.request.use(
     (config) => {
-      console.log('interceptor axios');
       if (token) {
         config.headers['Authorization'] = `${token}`;
-        console.log('Header da requisicao: ', token)
       }
       return config; // Retorna a configuração modificada
     },

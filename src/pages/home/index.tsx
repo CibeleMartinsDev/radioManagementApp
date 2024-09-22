@@ -81,7 +81,7 @@ export default function Home() {
             <VStack  space={130}>
                 {searchResult && searchResult.name && !loading ? (
                     <CardUI title={searchResult.name} description1={'Propagandas ativas: ' + advertisementActives} onPressIcon={() => {
-                        navigation.navigate('Visualizar', { customer: searchResult })
+                        navigation.navigate('Visualizar', { object: searchResult })
                         setSearchValue('')
                         setSearchResult({})
                         setAllowSearch(false)

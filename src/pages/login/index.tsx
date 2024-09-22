@@ -23,7 +23,6 @@ export default function Login() {
 
 
     const login = () => {
-        console.log('Chama a autenticação...')
         const userCredentials: UserCredentials = {
             email: emailUser,
             passwordUser: passwordUser
@@ -34,7 +33,6 @@ export default function Login() {
             setPasswordUser('');
             navigation.navigate('Home' as never);
         }).catch(e => {
-            console.log('catch tela de login: ', e.response.data)
             if(e.response.data){
                 setError({
                     message: e.response.data.message,
