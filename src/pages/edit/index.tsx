@@ -160,21 +160,31 @@ export default function Edit({ route }: Props) {
     }
 
     const deleteCustomer = () => {
-        // customerService.update(objectCustomer).then((r) => {
-        //     setErrorOrSuccess({
-        //         message: r.message,
-        //         status: r.status,
-        //         dateHour: ''
-        //     });
-        //     onOpen();
-        // }).catch((e) => {
-        //     setErrorOrSuccess({
-        //         message: e.message,
-        //         status: e.status,
-        //         dateHour: ''
-        //     });
-        //     onOpen();
-        // })
+        customerService.delete(objectCustomer.id).then((r) => {
+            setErrorOrSuccess({
+                message: 'Cliente excluído com sucesso!',
+                status: r.status,
+                dateHour: ''
+            });
+            onOpen();
+            setTimeout(() => navigation.navigate('Home'), 1500)
+        }).catch((e) => {
+            if (e.response && e.response.data) {
+                setErrorOrSuccess({
+                    message: e.response.data.message,
+                    status: e.response.data.status,
+                    dateHour: e.response.data.dateHour
+                });
+                onOpen();
+            } else {
+                setErrorOrSuccess({
+                    message: e.message,
+                    status: e.status,
+                    dateHour: ''
+                });
+                onOpen();
+            }
+        })
     }
 
     const [name, setName] = useState('');
@@ -308,21 +318,31 @@ export default function Edit({ route }: Props) {
     }
 
     const deleteAdvertisement = () => {
-        // customerService.update(objectCustomer).then((r) => {
-        //     setErrorOrSuccess({
-        //         message: r.message,
-        //         status: r.status,
-        //         dateHour: ''
-        //     });
-        //     onOpen();
-        // }).catch((e) => {
-        //     setErrorOrSuccess({
-        //         message: e.message,
-        //         status: e.status,
-        //         dateHour: ''
-        //     });
-        //     onOpen();
-        // })
+        advertisementService.delete(object.id ? object.id : object.id).then((r) => {
+            setErrorOrSuccess({
+                message: 'Propaganda excluída com sucesso!',
+                status: r.status,
+                dateHour: ''
+            });
+            onOpen();
+            setTimeout(() => navigation.navigate('Home'), 1500)
+        }).catch((e) => {
+            if (e.response && e.response.data) {
+                setErrorOrSuccess({
+                    message: e.response.data.message,
+                    status: e.response.data.status,
+                    dateHour: e.response.data.dateHour
+                });
+                onOpen();
+            } else {
+                setErrorOrSuccess({
+                    message: e.message,
+                    status: e.status,
+                    dateHour: ''
+                });
+                onOpen();
+            }
+        })
     }
 
     useEffect(() => {

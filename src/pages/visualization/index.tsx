@@ -15,7 +15,6 @@ type Props = {
 export default function Visualization({ route }: Props) {
     const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList, 'Editar'>>()
     const { object } = route.params;
-    console.log('Visualização: ', object)
     const objectCustomer: Customer = object  as Customer;
     const isCustomer =
                         typeof objectCustomer?.id === 'number' &&
