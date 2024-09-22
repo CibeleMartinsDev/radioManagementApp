@@ -46,7 +46,10 @@ export default function DynamicFormUI({ inputs, children, theme, selectOptions, 
                     </>
                 )
             }
+            <VStack space={8}>
             {children}
+            </VStack>
+           
         </VStack>
 
     )

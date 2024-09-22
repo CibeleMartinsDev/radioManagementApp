@@ -26,9 +26,9 @@ export default function CardVisualizationUI({ items, title, onPress, object }: C
                 <VStack space={4} w="100%">
                     {items.map(i => {
                         return (
-                            <HStack display={'flex'} alignItems={'center'} justifyContent={'flex-start'}>
+                            <HStack flexWrap={'wrap'} display={'flex'} alignItems={'center'} justifyContent={'flex-start'}>
                                 <Text fontSize="lg" bold>{i.label}</Text>
-                                <Text fontSize="md">{i.value}</Text>
+                                <Text flexWrap={'wrap'} fontSize="md">{i.value}</Text>
                             </HStack>
                         )
                     })}

@@ -1,14 +1,14 @@
 export default interface Advertisement {
-    id: number;
+    id?: number;
     name: string;
     customer: string;
-    frequencyDivulgation: string; 
+    frenquencyDivulgation: string; 
     advertisingSchedules: string[];
     amount: string;
-    datePayment: number; 
+    datePayement: number | string | undefined; 
     active: boolean;
-    dateRegister: string; 
+    dateRegister?: string; 
     observation: string;
-    dateActivation: string | null; 
-    dateDeactivation: string | null; 
+    dateActivation?: string | null; 
+    dateDeactivation?: string | null; 
 }

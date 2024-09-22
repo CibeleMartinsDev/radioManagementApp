@@ -18,7 +18,7 @@ export type RootStackParamList = {
     Home: undefined;
     'Cadastrar cliente': undefined;
     'Cadastrar propaganda': undefined;
-    'editar/cliente e propaganda': undefined;
+    'Editar': { object: any};
     'Visualizar': { object: any};
     Dashboard: undefined;
     'Informações Cobrança Propaganda': undefined;
@@ -41,7 +41,7 @@ export default function Navigator() {
             <Stack.Screen options={{ headerShown: false }} name="Home" component={GradientHome} />
             <Stack.Screen options={{ headerShown: false }} name="Cadastrar cliente" component={GradientRegisterCustomer} />
             <Stack.Screen options={{ headerShown: false }} name="Cadastrar propaganda" component={GradientRegisterAdvertisement} />
-            <Stack.Screen options={{ headerShown: false }} name="editar/cliente e propaganda" component={GradientEdit} />
+            <Stack.Screen options={{ headerShown: false }} name="Editar" component={GradientEdit} />
             <Stack.Screen options={{ headerShown: false }} name="Visualizar" component={GradientVisualization} />
             <Stack.Screen options={{ headerShown: false }} name="Dashboard" component={GradientDashboard} />
             <Stack.Screen options={{ headerShown: false }} name="Informações Cobrança Propaganda" component={GradientBillingInformation} />

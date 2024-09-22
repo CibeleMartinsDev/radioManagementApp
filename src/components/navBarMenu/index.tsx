@@ -40,6 +40,14 @@ export default function NavbarMenuUI() {
             </VStack>
             <VStack display={'flex'} justifyContent={'flex-end'} w={'autoWidth'} h={'customHeightNavbarMenu'}>
                 <Pressable
+                    onPress={() => navigation.goBack() }
+                    _pressed={{ opacity: 0.7 }}
+                >
+                    <Center>
+                    <Icon as={MaterialIcons} name="arrow-back" size="2xl" color="primary.genericBlack" mb={6} />
+                    </Center>
+                </Pressable>
+                <Pressable
                     onPress={() => navigation.navigate('Login' as never) }
                     _pressed={{ opacity: 0.7 }}
                 >
