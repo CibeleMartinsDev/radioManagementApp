@@ -12,23 +12,29 @@ export default class AdvertisementService extends AbstractService {
 
     async get(path?: string): Promise<AxiosResponse<any, any>> {
         try {
-            const response = await axios.get(this.urlBase + (path || ''));
+            const response = await axios.get(this.urlBase );
             return response;
-        } catch (error: any) {
+        } catch(error: any) {
             if (axios.isAxiosError(error)) {
-                // Verifica se há uma resposta do servidor
+                // Erro causado por Axios (problema de rede, servidor, etc.)
+                // console.log('Axios error message: ', error.message);
                 if (error.response) {
+                    // O servidor retornou uma resposta com status de erro
+                    // console.log('Response status: ', error.response.status);
+                    // console.log('Response data: ', error.response.data);
                     throw error;
                 } else if (error.request) {
-                    // Nenhuma resposta foi recebida
+                    // Nenhuma resposta foi recebida após o envio da requisição
+                    // console.log('Request was made but no response received: ', error.request);
                     throw error;
                 } else {
-                    // Outro erro de Axios
+                    // Outro erro aconteceu ao preparar a requisição
+                    // console.error('Error setting up request: ', error.message);
                     throw error;
                 }
             } else {
-                // Erro inesperado
-                throw new Error('Unexpected error occurred.');
+                throw Error('Erro inesperado.')
+                // console.log('Unexpected error in Authentication: ', error);
             }
         }
     }
