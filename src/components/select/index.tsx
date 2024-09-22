@@ -18,7 +18,7 @@ export default function SelectUI({ value, placeholder, onChange, items }: Select
             placeholderTextColor={'primary.generic'}
             dropdownIcon={<ChevronDownIcon size={5} color="white" />}
         >
-            {items.map(i => <Select.Item label={i.label} value={i.value} />)}
+            {items?.map(i => <Select.Item label={i.label} value={i.value} />)}
         </Select>
     )
 }

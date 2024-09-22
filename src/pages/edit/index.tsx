@@ -118,7 +118,7 @@ export default function Edit({ route }: Props) {
             setPhone2Customer('')
             onOpen();
             setTimeout(() => { 
-                customerService.getById(objectCustomer.id.toString()).then((r)=> {
+                customerService.getById( objectCustomer.id ? objectCustomer.id.toString() : '').then((r)=> {
                     console.log('Cliente atualizado pego pelo id: ', r.data)
                     navigation.navigate('Visualizar', { object: r.data }) 
                 }).catch((e)=> {

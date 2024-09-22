@@ -36,7 +36,7 @@ export default function CardVisualizationUI({ items, title, onPress, object }: C
             </VStack>
             <ScrollView w={'100%'} h="80">
                 <VStack w="80%" space={24}>
-                    {object?.map((i: any) => {
+                    {object?.length !== 0 ? object?.map((i: any) => {
                         const advertisementActive: string = i?.active === true ? 'Sim' : 'Não'
                         return (
                             <CardUI
@@ -46,7 +46,7 @@ export default function CardVisualizationUI({ items, title, onPress, object }: C
                                 onPressIcon={()=>  navigation.navigate('Visualizar', { object: i })}
                             />
                         );
-                    })}
+                    }) : <Heading>Esse cliente ainda não tem propagandas</Heading>}
                 </VStack>
     
             </ScrollView>

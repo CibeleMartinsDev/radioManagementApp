@@ -14,7 +14,7 @@ export default function DynamicFormUI({ inputs, children, theme, selectOptions, 
             {theme === 'customer' ? inputs.map(i => {
                 return (
                     <FormControl maxH={1} display="flex" alignItems={'center'} isRequired>
-                        <InputUI key={i.name} type={i.type} placeholder={i.placeholder} value={i.value} onChange={i.onChange} haveIcon={false} />
+                        <InputUI key={i.name} type={i.type} placeholder={i.placeholder} value={i.value as string} onChange={i.onChange} haveIcon={false} />
                         <FormControl.ErrorMessage key={i.type} _text={{
                             fontSize: 'xs'
                         }}>
@@ -28,11 +28,11 @@ export default function DynamicFormUI({ inputs, children, theme, selectOptions, 
                     <>
                         <SelectUI value={selectOptions?.value as string} onChange={selectOptions?.onChange as (v: string) => void} placeholder={selectOptions?.placeholder as string} items={selectOptions?.items as Items[]} />
                         {
-                            inputs.map(i => {
+                            inputs?.map(i => {
                                 return (
                                     <>
                                         <FormControl maxH={1} display="flex" alignItems={'center'} isRequired>
-                                            <InputUI key={i.name} type={i.type} placeholder={i.placeholder} value={i.value} onChange={i.onChange} haveIcon={false} />
+                                            <InputUI key={i.name} type={i.type} placeholder={i.placeholder} value={i.value as string} onChange={i.onChange} haveIcon={false} />
                                             <FormControl.ErrorMessage key={i.type} _text={{
                                                 fontSize: 'xs'
                                             }}>
