@@ -91,6 +91,7 @@ export default class CustomerService extends AbstractService {
         }
     }
     async register(object: any, path?: string): Promise<any> {
+        console.log(this.urlBase)
         try {
             const response = await axios.post(this.urlBase, object);
             return response;
@@ -100,8 +101,8 @@ export default class CustomerService extends AbstractService {
                 // console.log('Axios error message: ', error.message);
                 if (error.response) {
                     // O servidor retornou uma resposta com status de erro
-                    console.log('Response status: ', error.response.status);
-                    console.log('Response data: ', error.response.data);
+                    // console.log('Response status: ', error.response.status);
+                    // console.log('Response data: ', error.response.data);
                     throw error;
                 } else if (error.request) {
                     // Nenhuma resposta foi recebida após o envio da requisição

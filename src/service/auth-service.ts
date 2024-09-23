@@ -11,7 +11,7 @@ export default class AuthService {
     }
 
      async authenticate(credentials: UserCredentials){
-        // console.log('Credenciais do usuário: ', credentials)
+        console.log('Credenciais do usuário: ', credentials)
 
         try {
             // console.log('Tentando fazer o login...');

@@ -10,8 +10,8 @@ import BottomSheetUI from "../../components/bottomSheet";
 import ErrorResponse from '../../interfaces/error';
 export default function Login() {
     const navigation = useNavigation()
-    const [emailUser, setEmailUser] = useState('cibelemartins@hotmail.com');
-    const [passwordUser, setPasswordUser] = useState('9999999');
+    const [emailUser, setEmailUser] = useState('cibelemartins1@hotmail.com');
+    const [passwordUser, setPasswordUser] = useState('7777777');
     const [error, setError] = useState<ErrorResponse | null>();
     const context = useContext(AuthContext);
     const authService = new AuthService();

@@ -11,6 +11,7 @@ export default class AdvertisementService extends AbstractService {
 
 
     async get(path?: string): Promise<AxiosResponse<any, any>> {
+        console.log(this.urlBase )
         try {
             const response = await axios.get(this.urlBase );
             return response;
